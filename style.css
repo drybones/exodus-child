@@ -1,0 +1,21 @@
+/*
+Theme Name: Exodus Child
+Description: A child theme for Exodus.
+Author: Your Name
+Version: 1.0
+Template: exodus
+*/
+
+/* Import the parent theme stylesheet */
+@import url("../exodus/style.css");
+
+/*
+This stylesheet is loaded instead of the parent theme's stylesheet, which is imported above.
+To override styles, copy them here from the original stylesheet, then change the properties.
+
+Similarly, you can modify stylesheets in /css and /colors. For example, you could create a file
+in this child theme at css/responsive.css containing @import url("../../exodus/css/responsive.css");
+
+See http://churchthemes.com/guides/developer/child-theming/ and the WordPress Codex:
+http://codex.wordpress.org/Child_Themes
+*/
