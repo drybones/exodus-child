@@ -24,3 +24,8 @@ http://codex.wordpress.org/Child_Themes
 {
 padding: 30px 0;
 }
+
+.exodus-nav-left-right
+{
+display: none;
+}
