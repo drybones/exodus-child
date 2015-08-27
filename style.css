@@ -20,17 +20,30 @@ See http://churchthemes.com/guides/developer/child-theming/ and the WordPress Co
 http://codex.wordpress.org/Child_Themes
 */
 
+/* Reduce the padding on the logo */
 #exodus-logo-bar-content
 {
 padding: 30px 0;
 }
 
+/* Hide the sibling navigation links for entries (they don't respect ordering, and aren't that useful) */
 .exodus-nav-left-right
 {
 display: none;
 }
 
+/* Hide the location buttons -- we'd rather direct people to the contact us page */
 #exodus-footer-top-buttons
+{
+	display: none;
+}
+
+/* Hide post byline (except for sermons) and category (we just use "news") */
+.exodus-entry-meta > li.exodus-entry-byline:not(.exodus-sermon-speaker)
+{
+	display: none;
+}
+.exodus-entry-meta > li.exodus-entry-category
 {
 	display: none;
 }
