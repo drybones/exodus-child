@@ -47,3 +47,15 @@ display: none;
 {
 	display: none;
 }
+
+/* Hide the short bio excerpts on the people listing */
+.exodus-person-short .exodus-entry-content
+{
+	display: none;
+}
+
+/* Hide the short excerpts on the locations listing */
+.exodus-location-short .exodus-entry-content
+{
+	display: none;
+}
