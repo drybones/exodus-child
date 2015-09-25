@@ -59,3 +59,14 @@ display: none;
 {
 	display: none;
 }
+
+/* There's a clipping bug in the Read and print section, 
+where at certain widths the description gets clipped on 
+the right. The culprit is a -20px right margin on 
+.exodus-widget-entry-meta, but I'm not sure if that's 
+needed for some reason. So suppress it as narrowly as
+possible */
+#read-and-print .exodus-widget-entry-meta
+{
+	margin-right: 0;
+}
