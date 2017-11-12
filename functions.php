@@ -20,6 +20,9 @@ add_action( 'after_setup_theme', 'exodus_child_setup', 11 );
 // Setup theme features, actions, filters, etc.
 function exodus_child_setup() {
 
+	// Add our people content loop filter, at priority 11 to run after the default
+	add_filter( 'exodus_loop_after_content_query', 'exodus_child_people_loop_after_content', 11 );
+
 	// Load child theme language file
 	// This will cause $locale.mo (e.g. en_US.mo) in the child theme's directory to load.
 	// Optionally, it can go in wp-content/languages/themes/exodus-child-$locale.mo.
@@ -73,5 +76,26 @@ function exodus_child_enqueue_scripts() {
 	wp_enqueue_script( 'exodus-child-script', CTFW_THEME_CHILD_URL . '/new-script.js', false, CTFW_THEME_VERSION );
 
 	// you can enqueue more here
+
+}
+
+// Replace the people content loop to exclude the archive group
+function exodus_child_people_loop_after_content() {
+
+	return new WP_Query( array(
+		'post_type'			=> 'ctc_person',
+		'paged'				=> ctfw_page_num(), // returns/corrects $paged so pagination works on static front page
+		'orderby'			=> 'menu_order',
+		'order'				=> 'ASC',
+
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'ctc_person_group',
+				'field'    => 'slug',
+				'terms'    => array( 'archive' ),
+				'operator' => 'NOT IN',
+			),
+		), 
+	) );
 
 }
