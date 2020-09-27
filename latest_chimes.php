@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Latest Term Card
+Template Name: Latest Chimes
 */
 ?>
 <?php 
