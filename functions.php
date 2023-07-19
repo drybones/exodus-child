@@ -31,7 +31,7 @@ function exodus_child_setup() {
 
 	// Enqueue new JavaScript files
 	// See exodus_child_enqueue_scripts() below
-	//add_action( 'wp_enqueue_scripts', 'exodus_child_enqueue_scripts' ); // front-end only
+	add_action( 'wp_enqueue_scripts', 'exodus_child_enqueue_scripts' ); // front-end only
 	
 	// Example of removing a function that is hooked
 	// remove_action() works similarly
@@ -70,7 +70,8 @@ function exodus_child_enqueue_styles() {
  */
 function exodus_child_enqueue_scripts() {
 
-	wp_enqueue_script( 'exodus-child-script', CTFW_THEME_CHILD_URL . '/new-script.js', false, CTFW_THEME_VERSION );
+	// Enqueue to the footer
+	wp_enqueue_script( 'exodus-child-script', CTFW_THEME_CHILD_URL . '/js/custom.js', false, CTFW_THEME_VERSION, true );
 
 	// you can enqueue more here
 

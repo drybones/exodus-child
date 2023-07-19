@@ -70,3 +70,21 @@ possible */
 {
 	margin-right: 0;
 }
+
+.exodus-slide-image-container video
+{
+	object-fit: cover;
+}
+
+.exodus-not-mobile .exodus-slide-video:hover .exodus-slide-title,
+.exodus-not-mobile .exodus-slide-video:hover .exodus-slide-description {
+	opacity: 1;
+}
+
+.flexslider .slides video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-top-left-radius: 0 !important; /* negate .exodus-image rounding */
+	border-top-right-radius: 0 !important;
+}
